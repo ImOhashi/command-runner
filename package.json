@@ -1,0 +1,38 @@
+{
+  "name": "command-runner",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ImOhashi/command-runner",
+  "authors": "ImOhashi <leonardoohashi.mkt@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/commander": "^2.12.2",
+    "@types/dotenv": "^8.2.0",
+    "@types/figlet": "^1.5.4",
+    "@types/inquirer": "^8.2.1",
+    "@types/jest": "^28.1.1",
+    "@types/node": "^17.0.42",
+    "@types/systeminformation": "^3.54.1",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "eslint": "^8.17.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.2",
+    "eslint-plugin-promise": "^6.0.0",
+    "jest": "^28.1.1",
+    "ts-jest": "^28.0.5",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "commander": "^9.3.0",
+    "cyber-logger": "^1.0.1",
+    "dotenv": "^16.0.1",
+    "figlet": "^1.5.2",
+    "inquirer": "^8.2.4",
+    "systeminformation": "^5.11.20"
+  }
+}
