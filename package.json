@@ -1,10 +1,15 @@
 {
   "name": "command-runner",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.ts",
   "repository": "https://github.com/ImOhashi/command-runner",
   "authors": "ImOhashi <leonardoohashi.mkt@gmail.com>",
+  "description": "Write a description",
   "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "ts-node src/index.ts"
+  },
   "devDependencies": {
     "@types/chalk": "^2.2.0",
     "@types/commander": "^2.12.2",
@@ -28,7 +33,7 @@
   },
   "dependencies": {
     "chalk": "^5.0.1",
-    "commander": "^9.3.0",
+    "commander": "^7.2.0",
     "cyber-logger": "^1.0.1",
     "dotenv": "^16.0.1",
     "figlet": "^1.5.2",
