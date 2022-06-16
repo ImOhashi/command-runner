@@ -31,6 +31,11 @@ program
   .description("Get shell information.");
 
 program
+  .command("apps-version")
+  .action(os.getVersions)
+  .description("Get apps version.");
+
+program
   .command("docker")
   .action(docker.getInfo)
   .description("Get all Docker information.");

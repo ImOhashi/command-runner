@@ -1,5 +1,5 @@
 import { logger } from "cyber-logger";
-import { osInfo, shell, users } from "systeminformation";
+import { osInfo, shell, users, versions } from "systeminformation";
 
 export class OperatingSystem {
   public async getAllSystemUsers(): Promise<void> {
@@ -34,6 +34,18 @@ export class OperatingSystem {
       })
       .catch((err) => {
         logger.error(`Error while finding shell information: ${err}`);
+        throw new Error(err);
+      });
+  }
+
+  public async getVersions(): Promise<void> {
+    versions()
+      .then((apps) => {
+        logger.info("Finding apps versions.");
+        console.table(apps);
+      })
+      .catch((err) => {
+        logger.error(`Error while finding apps version: ${err}`);
         throw new Error(err);
       });
   }
