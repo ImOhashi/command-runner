@@ -1,7 +1,7 @@
 import { Command } from "commander";
 import { config } from "dotenv";
 
-import { Docker, OperatingSystem } from "./tools";
+import { Disk, Docker, OperatingSystem } from "./tools";
 
 config();
 
@@ -9,6 +9,7 @@ const program = new Command();
 
 const os = new OperatingSystem();
 const docker = new Docker();
+const disks = new Disk();
 
 program
   .name(process.env.npm_package_name)
@@ -49,5 +50,10 @@ program
   .command("docker-containers")
   .action(docker.getContainers)
   .description("Get all Docker containers.");
+
+program
+  .command("disks-layout")
+  .action(disks.getDiskLayout)
+  .description("Get all disks layout.");
 
 program.parse(process.argv);
