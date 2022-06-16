@@ -15,7 +15,7 @@ program
   .description(process.env.npm_package_description);
 
 program
-  .command("users")
+  .option("-u, --users, Get all system registered users.")
   .action(os.getAllSystemUsers)
   .description("Get all system registered users.");
 
