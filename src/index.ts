@@ -56,4 +56,9 @@ program
   .action(disks.getDiskLayout)
   .description("Get all disks layout.");
 
+program
+  .command("block-devices")
+  .action(disks.getBlockDevices)
+  .description("Get all block devices.");
+
 program.parse(process.argv);

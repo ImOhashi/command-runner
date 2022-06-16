@@ -1,5 +1,5 @@
 import { logger } from "cyber-logger";
-import { diskLayout } from "systeminformation";
+import { blockDevices, diskLayout } from "systeminformation";
 
 export class Disk {
   public async getDiskLayout(): Promise<void> {
@@ -10,6 +10,18 @@ export class Disk {
       })
       .catch((err) => {
         logger.error(`Error while finding disks layout: ${err}`);
+        throw new Error(err);
+      });
+  }
+
+  public async getBlockDevices(): Promise<void> {
+    blockDevices()
+      .then((devices) => {
+        logger.info("Finding all block devices.");
+        console.log(devices);
+      })
+      .catch((err) => {
+        logger.error(`Error while finding block devices: ${err}`);
         throw new Error(err);
       });
   }
