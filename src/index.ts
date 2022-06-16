@@ -16,22 +16,32 @@ program
   .description(process.env.npm_package_description);
 
 program
-  .option("-u, --users, Get all system registered users.")
+  .command("users")
   .action(os.getAllSystemUsers)
   .description("Get all system registered users.");
 
 program
-  .option("-d, --docker, Get all Docker information.")
+  .command("info")
+  .action(os.getOsInfo)
+  .description("Get all system information.");
+
+program
+  .command("shell")
+  .action(os.getShell)
+  .description("Get shell information.");
+
+program
+  .command("docker")
   .action(docker.getInfo)
   .description("Get all Docker information.");
 
 program
-  .option("-di, --docker-images, Get all Docker images.")
+  .command("docker-images")
   .action(docker.getImages)
   .description("Get all Docker images.");
 
 program
-  .option("-dc, --docker-containers, Get all Docker containers.")
+  .command("docker-containers")
   .action(docker.getContainers)
   .description("Get all Docker containers.");
 

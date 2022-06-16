@@ -2,7 +2,7 @@ import { logger } from "cyber-logger";
 import { dockerContainers, dockerImages, dockerInfo } from "systeminformation";
 
 export class Docker {
-  async getInfo(): Promise<void> {
+  public async getInfo(): Promise<void> {
     dockerInfo()
       .then((info) => {
         logger.info("Finding Docker info.");
@@ -14,7 +14,7 @@ export class Docker {
       });
   }
 
-  async getImages(): Promise<void> {
+  public async getImages(): Promise<void> {
     dockerImages()
       .then((images) => {
         logger.info("Finding all Docker images.");
@@ -26,7 +26,7 @@ export class Docker {
       });
   }
 
-  async getContainers(): Promise<void> {
+  public async getContainers(): Promise<void> {
     dockerContainers()
       .then((containers) => {
         logger.info("Finding all Docker containers.");
