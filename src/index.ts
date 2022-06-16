@@ -25,4 +25,9 @@ program
   .action(docker.getInfo)
   .description("Get all Docker information.");
 
+program
+  .option("-di, --docker-images, Get all Docker images.")
+  .action(docker.getImages)
+  .description("Get all Docker images.");
+
 program.parse(process.argv);

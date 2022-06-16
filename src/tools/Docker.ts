@@ -1,5 +1,5 @@
 import { logger } from "cyber-logger";
-import { dockerInfo } from "systeminformation";
+import { dockerImages, dockerInfo } from "systeminformation";
 
 export class Docker {
   async getInfo(): Promise<void> {
@@ -10,6 +10,18 @@ export class Docker {
       })
       .catch((err) => {
         logger.error(`Error while finding Docker info: ${err}`);
+        throw new Error(err);
+      });
+  }
+
+  async getImages(): Promise<void> {
+    await dockerImages()
+      .then((images) => {
+        logger.info("Finding all Docker images.");
+        console.info(images);
+      })
+      .catch((err) => {
+        logger.error(`Error while finding all Docker images: ${err}`);
         throw new Error(err);
       });
   }
