@@ -30,4 +30,9 @@ program
   .action(docker.getImages)
   .description("Get all Docker images.");
 
+program
+  .option("-dc, --docker-containers, Get all Docker containers.")
+  .action(docker.getContainers)
+  .description("Get all Docker containers.");
+
 program.parse(process.argv);

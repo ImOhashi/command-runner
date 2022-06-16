@@ -1,9 +1,9 @@
 import { logger } from "cyber-logger";
-import { dockerImages, dockerInfo } from "systeminformation";
+import { dockerContainers, dockerImages, dockerInfo } from "systeminformation";
 
 export class Docker {
   async getInfo(): Promise<void> {
-    await dockerInfo()
+    dockerInfo()
       .then((info) => {
         logger.info("Finding Docker info.");
         console.table(info);
@@ -15,13 +15,25 @@ export class Docker {
   }
 
   async getImages(): Promise<void> {
-    await dockerImages()
+    dockerImages()
       .then((images) => {
         logger.info("Finding all Docker images.");
         console.info(images);
       })
       .catch((err) => {
         logger.error(`Error while finding all Docker images: ${err}`);
+        throw new Error(err);
+      });
+  }
+
+  async getContainers(): Promise<void> {
+    dockerContainers()
+      .then((containers) => {
+        logger.info("Finding all Docker containers.");
+        console.info(containers);
+      })
+      .catch((err) => {
+        logger.error(`Error while finding all Docker containers: ${err}`);
         throw new Error(err);
       });
   }
